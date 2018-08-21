@@ -1,16 +1,11 @@
-#dinosaurs
-
-# Exercise: Rewrite your store items using a class instead of a hash.
-# a) Choose which attributes should have “reader” methods and which attributes should have “writer” methods.
-# b) Create an instance from your store item class. Use puts statements to print the 3 attributes individually to the terminal.
 
 class Dino
 
   def initialize(name, diet, hip_type, weight)
-    @name
-    @diet
-    @hip_type
-    @weight
+    @name = name
+    @diet = diet
+    @hip_type = hip_type
+    @weight = weight
   end
 
   def name
@@ -35,7 +30,7 @@ class Dino
   end
 
   def print_info
-    puts "#{name} #{diet} #{hip_type} #{weight}"
+    puts "#{@name} #{@diet} #{@hip_type} #{@weight}"
   end
 end
 
@@ -43,7 +38,14 @@ end
 
 dino1 = Dino.new("Tyrannosaurus Rex", "carnivore", "bird-hipped", 1500)
 
-dino1.print_info
+puts dino1.print_info
+puts dino1.name 
+puts dino1.diet
+puts dino1.weight
+puts dino1.hip_type
+dino1.weight = 1000
+puts dino1.weight
+  
 
 
 
