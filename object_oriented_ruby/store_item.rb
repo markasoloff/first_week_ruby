@@ -1,32 +1,15 @@
 
 class Dino
 
-  def initialize(name, diet, hip_type, weight)
-    @name = name
-    @diet = diet
-    @hip_type = hip_type
-    @weight = weight
-  end
-
-  def name
-    @name
-  end
-
-  def diet
-    @diet
-  end
-
-  def hip_type
-    @hip_type
-  end
-
-  def weight
-    @weight
-  end
+  attr_reader :name, :diet, :hip_type, :weight
+  attr_writer :name, :weight
 
 
-  def weight=(pounds)
-    @weight = pounds
+  def initialize(input)
+    @name = input [:name]
+    @diet = input [:diet]
+    @hip_type = input [:hip_type]
+    @weight = input [:weight]
   end
 
   def print_info
@@ -36,15 +19,12 @@ end
 
 
 
-dino1 = Dino.new("Tyrannosaurus Rex", "carnivore", "bird-hipped", 1500)
+dino1 = Dino.new(name: "Tyrannosaurus Rex", diet: "carnivore", hip_type: "bird-hipped", weight: 1500)
 
 puts dino1.print_info
 puts dino1.name 
-puts dino1.diet
-puts dino1.weight
+puts dino1.weight = 50000
 puts dino1.hip_type
-dino1.weight = 1000
-puts dino1.weight
   
 
 
